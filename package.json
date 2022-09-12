@@ -39,7 +39,7 @@
   "scripts": {
     "start": "concurrently \"cross-env BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
     "build:prod": "react-scripts build && electron-builder --win",
-    "build:publish": "react-scripts build && electron-builder --win --publish always"
+    "build:publish": "set GH_TOKEN=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 && react-scripts build && electron-builder --win --publish always"
   },
   "build": {
     "productName": "Avalúos Callejas App",
