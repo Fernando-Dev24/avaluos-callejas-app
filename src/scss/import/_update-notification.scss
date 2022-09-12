@@ -1,0 +1,58 @@
+.notification-content {
+   width: 70%;
+   padding: 3.125rem; /* 30px */
+   text-align: center;
+   border-radius: 5px;
+   box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+   background: #FFF;
+   .notification-available {
+      h2 { color: $secondary; }
+      p { font-size: 1.125rem; /* 18px */ }
+      .btn-close-modal {
+         display: block;
+         width: 100%;
+         margin-top: 1.25rem; /* 20px */
+         padding: 0.625rem 1.25rem; /* 10px 20px */
+         font-size: 1.125rem; /* 18px */
+         border: none;
+         border-radius: 5px;
+         color: #FFF;
+         background: $secondary;
+         transition: all .3s ease;
+         cursor: pointer;
+         &:hover { opacity: .9; }
+      }
+   }
+   .notification-completed {
+      h2 { color: $secondary; }
+      p {
+         margin-bottom: 1.25rem; /* 20px */
+         font-size: 1.125rem; /* 18px */
+      }
+      .modal-options {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         .btn-option {
+            display: block;
+            width: 100%;
+            padding: 1.25rem 1.25rem; /* 10px 20px */
+            font-size: 1.125rem; /* 20px */
+            border: 1px solid #CECECE;
+            border-radius: 5px;
+            background: transparent;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover { border-color: $secondary; }
+            &.recommend {
+               margin-bottom: 1.25rem; /* 20px */
+               border: none;
+               color: #FFF;
+               background: $secondary;
+               &:hover { opacity: .9; }
+            }
+         }
+      }
+   }
+}

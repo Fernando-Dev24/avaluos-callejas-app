@@ -1,0 +1,29 @@
+.image-uploader-header {
+   width: 100%;
+   h4 {
+      margin-bottom: 0.625rem; /* 10px */
+      font-size: 1.875rem; /* 30px */
+      color: #171717;
+   }
+
+   .file-upload {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #171717;
+      border-radius: 5px;
+      padding: 10px; /* 10px */
+      background: transparent;
+      transition: all .3s ease;
+      cursor: pointer;
+      input {
+         overflow: hidden;
+         width: 0;
+      }
+      &:hover {
+         color: #FFF;
+         background: #171717;
+      }
+   }
+}

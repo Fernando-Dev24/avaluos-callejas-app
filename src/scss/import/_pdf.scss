@@ -1,0 +1,605 @@
+.pdf-container {
+   position: relative;
+   width: 210mm;
+   height: 297mm;
+   margin-bottom: 2.5rem; /* 40px */
+   padding: 1.25rem; /* 20px */
+   font-family: 'Tahoma', sans-serif;
+   background: #FFF /* url(../../assets/logo-low-opacity.png) #FFF repeat */;
+   .background-logo {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      img {
+         display: block;
+         width: 80%;
+         margin: 0 auto;
+         z-index: -1;
+      }
+   }
+
+   /* header */
+   .page-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px; /* 10px */
+      .logo {
+         width: 30%;
+         margin-right: 1.25rem; /* 20px */
+         img {
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            margin: 0.625rem; /* 10px */
+         }
+      }
+      .header__content {
+         width: max-content;
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding-bottom: 10px;
+         border-bottom: 1px solid #CECECE;
+         & p:first-child {
+            width: 100%;
+            text-align: center;
+            font-size: 0.5625rem; /* 9px */
+            font-weight: bold;
+         }
+         .important {
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: $primary;
+         }
+      }
+   }
+
+   /* footer */
+   .page-footer {
+      position: absolute;
+      bottom: 5rem; /* 80px */
+      hr {
+         width: 80%;
+         margin: 0 auto;
+         margin-bottom: 5px;
+      }
+      .social__media-grid {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 0.625rem; /* 10px */
+         .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+               width: 6%;
+               max-width: 6%;
+               margin-right: 0.625rem; /* 10px */
+            }
+            figcaption { font-size: 12px; }
+         }
+      }
+      .contact {
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+         .contact-article {
+            p { font-size: 0.625rem; /* 10px */ }
+         }
+      }
+   }
+   
+   /* avaluo first page content */
+   .vehicle-data {
+      p {
+         font-size: 12px;
+         margin-bottom: 3px;
+         &.crediq-recuperado {
+            margin: 0;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: red;
+         }
+      }
+      .car-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         p {
+            font-size: 1rem;
+            font-weight: bold;
+            &.serial {
+               position: absolute !important;
+               top: 53%;
+               left: 58%;
+               font-size: 0.625rem; /* 10px */
+               opacity: .1;
+            }
+         }
+      }
+      .car-data {
+         margin-bottom: 0.625rem; /* 20px */
+         .car-info-table {
+            width: 100%;
+            margin-top: 0.5rem; /* 8px */
+            border-collapse: separate;
+            border-spacing: 0 5px;
+            .car-table-row {
+               border-spacing: 5px 0;
+               td {
+                  font-size: 11px; /* 11px */
+                  &.data {
+                     padding-left: 5px;
+                     &.warning {
+                        font-weight: bold;
+                        color: red;
+                     }
+                  }
+                  &.auto-width {
+                     width: 25%;
+                  }
+                  &.bigger-cell {
+                     font-size: 0.875rem; /* 14px */
+                  }
+                  &.date-expired {
+                     color: red;
+                  }
+               }
+            }
+         }
+         .extras {
+            padding: 0 0 0 0;
+            text-align: left;
+            border-bottom: 1px solid $secondary;
+            & p:first-child {
+               text-align: left;
+            }
+            & p:last-child { font-size: 0.6563rem; /* 10.5px */ }
+         }
+      }
+      .car-techniques-data {
+         & > p {
+            font-size: 1rem; /* 16px */
+            font-weight: bold;
+         }
+         .techniques-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 5px;
+            .car-table-row {
+               td { font-size: 0.6875rem; /* 11px */ }
+            }
+         }
+         .tires-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.625rem; /* 10px */
+            margin: 0.625rem 0;
+            article {
+               text-align: center;
+            }
+         }
+         .two-columns-modified {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem; /* 20px */
+            .first-column, .second-column {
+               article {
+                  p {
+                     &:last-child {
+                        font-size: 11px;
+                     }
+                  }
+               }
+            }
+         }
+         .compressions {
+            margin: 0.625rem 0; /* 10px 0 */
+            border: 1px solid #000;
+            .compressions-reason {
+               margin: 0;
+               padding: 5px 0; /* 5px 0 */
+               text-align: center;
+               border-top: 1px solid #000;
+               & p:first-child { margin-bottom: 5px; font-weight: bold; }
+               color: #FFF;
+               background: $primary;
+            }
+            .compressions-reason-empty {
+               margin: 0;
+               padding: 0.3125rem 0; /* 5px 0 */
+               border-top: 1px solid #000;
+               & p:first-child { font-weight: bold; }
+            }
+            .compressions-grid {
+               display: grid;
+               grid-template-columns: repeat(4, 1fr);
+               gap: 5px; /* 10px */
+               border-top: 1px solid #000;
+               span { margin-left: 0.25rem; /* 4px */ }
+               span.important {
+                  font-weight: 600;
+                  color: red;
+               }
+            }
+         }
+         .car-numbers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+            article {
+               text-align: center;
+               p {
+                  font-weight: bold;
+                  color: #000;
+                  &.different {
+                     color: #FFF;
+                     background: $primary;
+                  }
+               }
+            }
+         }
+         .seals {
+            margin-top: 5px;
+            .seals-grid {
+               display: block;
+               .seal {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0 !important;
+                  text-align: center;
+                  font-size: 12px !important; /* 12px */
+                  font-weight: bold;
+                  color: #FFF;
+                  background: $primary;
+               }
+            }
+         }
+      }
+   }
+
+   /* avaluo second page */
+   .car-expenses {
+      p { font-size: 0.75rem; /* 12px */ margin-bottom: 5px;  border: none; }
+      .car-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         p {
+            font-size: 1rem;
+            font-weight: bold;
+            &.serial {
+               position: absolute !important;
+               top: 53%;
+               left: 50%;
+               font-size: 10px;
+               opacity: .1;
+            }
+         }
+      }
+      .car-data-table {
+         width: 100%;
+         border-collapse: separate;
+         border-spacing: 0 5px;
+         .table-row-body {
+            td {
+               font-size: 0.75rem; /* 12px */
+            }
+         }
+      }
+
+      /* .expenses {
+         padding-top: 0.625rem;
+         border: none;
+         & > p {
+            text-align: center;
+            font-size: 0.625rem;
+            font-weight: bold;
+         }
+         .expenses__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            p {
+               font-weight: bold;
+               &:last-child {
+                  text-align: right;
+               }
+            }
+         }
+         .expenses__content {
+            border: none;
+            .expenses {
+               display: flex;
+               justify-content: space-between;
+               padding: 1px 0;
+               border-bottom: 1px solid #CECECE;
+               p {
+                  text-align: left;
+                  margin-bottom: 0;
+                  font-weight: 400;
+                  font-size: 10.4px;
+                  color: #000;
+                  &:first-child {
+                     width: 94.7%;
+                  }
+               }
+               &.important {
+                  p { color: $primary; }
+               }
+            }
+            &.responsive {
+               .expenses {
+                  p {
+                     font-size: 9.6px;
+                  }
+               }
+            }
+         }
+         .expenses-conclusions {
+            margin-top: 0.9375rem;
+            &.responsive {
+               margin-top: 0.625rem;
+            }
+            &.bottom {
+               position: absolute;
+               bottom: 127px;
+               width: 95%;
+            }
+            .notes-expenses {
+               margin-bottom: 0.625rem;
+               border-bottom: 1px solid #000;
+               &.no-border { border: none; }
+               .total {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  color: $primary;
+                  & > p:first-child {
+                     font-size: 0.875rem;
+                     font-weight: bold;
+                  }
+                  & p:last-child {
+                     font-size: 0.875rem;
+                     font-weight: bold;
+                  }
+                  p {
+                     margin: 0;
+                  }
+               }
+               .total-message {
+                  font-size: 0.5625rem;
+                  font-weight: bold;
+                  color: $primary;
+               }
+               .car-comments {
+                  font-weight: bold;
+                  color: #FFF;
+                  background: $primary;
+                  & > p:first-child {
+                     margin: 0;
+                     font-weight: bold;
+                     font-size: 0.875rem;
+                  }
+                  & p:last-child {
+                     font-size: 8.7px;
+                  }
+               }
+            }
+            .total-expenses {
+               & > p {
+                  text-align: center;
+                  font-size: 1rem;
+                  font-weight: bold;
+                  &.max-valor-message {
+                     font-size: 8.4px;
+                     color: rgba($color: $secondary, $alpha: .8);
+                  }
+               }
+               .two-columns {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-top: 0.625rem;
+                  article {
+                     text-align: center;
+                     &:first-child {
+                        margin-right: 1.875rem;
+                     }
+                     p {
+                        font-weight: bold;
+                        font-size: 1.4375rem;
+                        text-align: center;
+                        &.max {
+                           color: red;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      } */
+      
+      .re-inspeccion {
+         p {
+            font-weight: bold;
+            font-size: 10px;
+            text-align: center;
+         }
+      }
+
+      .expenses-square {
+         position: relative;
+         width: 100%;
+         &.responsive {
+            .expenses-content {
+               min-height: 510px !important;
+               max-height: 510px !important;
+               margin: 0;
+               /* .expenses-table {
+                  .expenses-header {
+                     td {
+                        &.border-bottom { padding-bottom: 400px; }
+                     }
+                  }
+                  .expenses-body {
+                     td { font-size: 9px; }
+                     &:last-child {
+                        td { padding-bottom: 400px; }
+                     }
+                  }
+               } */
+            }
+            .expenses-totals {
+               position: static;
+            }
+         }
+         &.diagnostico {
+            .expenses-content {
+               min-height: 650px !important;
+               max-height: 650px !important;
+            }
+            .expenses-totals { bottom: -110px; }
+         }
+         .expenses-content {
+            width: 100%;
+            height: auto;
+            min-height: 550px !important;
+            max-height: 550px !important;
+            margin-bottom: 5px;
+            overflow: hidden;
+           /*  background: #F2F2F2; */
+            .expenses-table {
+               width: 100%;
+               border-collapse: collapse;
+               .expenses-header {
+                  td {
+                     font-size: 12px;
+                     font-weight: bold;
+                     &:first-child {
+                        width: 70%;
+                     }
+                     &:last-child {
+                        width: 8%;
+                        padding: 0 0 5px 5px;
+                        text-align: center;
+                        border-left: 1px solid rgba($color: $secondary, $alpha: .2);
+                     }
+                     &.border-bottom { padding-bottom: 1200px; }
+                  }
+               }
+               .expenses-body {
+                  td {
+                     font-size: 10px;
+                     &:first-child {
+                        border-bottom: 1px solid rgba($color: $secondary, $alpha: .05);
+                     }
+                     &:last-child {
+                        text-align: center;
+                        padding: 1px 0;
+                        border-bottom: 1px solid rgba($color: $secondary, $alpha: .05);
+                        border-left: 1px solid rgba($color: $secondary, $alpha: .2);
+                     }
+                  }
+                  &:last-child {
+                     td {
+                        padding-bottom: 1200px;
+                        border-bottom: none;
+                     }
+                  }
+               }
+            }
+         }
+         .expenses-totals {
+            position: absolute;
+            bottom: -205px;
+            background: #FFF;
+            .expenses-flex {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               p {
+                  margin: 0;
+                  font-weight: bold;
+                  color: $primary;
+                  font-size: 12px;
+                  &:first-child {
+                     font-size: 14px;
+                  }
+               }
+            }
+            p {
+               font-size: 9px;
+               font-weight: bold;
+               color: $primary;
+            }
+            .expenses-comments {
+               margin-bottom: 5px;
+               color: #FFF;
+               background: $primary;
+               p {
+                  color: #FFF;
+                  margin: 0;
+                  &:first-child {
+                     margin-bottom: 3px;
+                     font-size: 14px;
+                  }
+                  &:last-child {
+                     font-size: 8.5px;
+                     line-height: 12px;
+                  }
+               }
+            }
+            hr { border: 0.1px solid rgba($color: #000000, $alpha: .6); }
+         }
+         .valuo-totals {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            .totals-content {
+               width: 100%;
+               .label {
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-align: center;
+                  &.max {
+                     font-size: 9px;
+                     color: $primary;
+                  }
+               }
+               .total {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                  div {
+                     &:first-child { margin-right: 30px; }
+                     p {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        color: $secondary;
+                        &.max { color: red; }
+                     }
+                     h4 {
+                        font-size: 23px;
+                        &.value-in-letters { font-size: 23px; }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

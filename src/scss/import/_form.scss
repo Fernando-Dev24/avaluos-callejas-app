@@ -1,0 +1,277 @@
+.form-container {
+   width: 100%;
+   height: auto;
+   margin-top: 100px;
+   padding: 3.125rem 0 0 0; /* 50px */
+   border-top: 1px solid #CECECE;
+   background-color: $alternate;
+   .form {
+      width: 100%;
+      height: auto;
+      padding: 3.125rem 3.125rem 4.375rem; /* 50px 40px 70px */
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+      background: #FFF;
+      .form-title {
+         display: flex;
+         justify-content: space-between;
+         align-items: baseline;
+         margin-bottom: 1.875rem; /* 30px */
+         &.no-margin {
+            margin: 0 !important;
+         }
+         h3 {
+            font-size: 1.5625rem; /* 25px */
+            color: $primary;
+         }
+         .btn-prices {
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            outline: none;
+            border: 1px solid $secondary;
+            border-radius: 5px;
+            color: $secondary;
+            background: transparent;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover { color: #FFF; background: $secondary; }
+         }
+         .btn-search {
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            border: 1px solid #CECECE;
+            border-radius: 3px;
+            color: $secondary;
+            background: transparent;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:first-child { margin-right: 1.25rem; /* 20px */ }
+            &:hover {
+               border-color: transparent;
+               color: #FFF;
+               background: $secondary;
+            }
+         }
+         .btn-option {
+            margin: 0 1.25rem; /* 20px */
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            border: 1px solid #CECECE;
+            border-radius: 3px;
+            color: $secondary;
+            background: transparent;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover {
+               border-color: transparent;
+               color: #FFF;
+               background: $secondary;
+            }
+         }
+         .from-label {
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            border: 1px solid #CECECE;
+            border-radius: 3px;
+            background: $alternate;
+         }
+      }
+      .input-field {
+         margin-bottom: 1.25rem; /* 20px */
+         label {
+            display: block;
+            margin-bottom: 0.625rem; /* 10px */
+            font-size: 1rem; /* 16px */
+            color: rgba($color: $secondary, $alpha: .8);
+            cursor: pointer;
+         }
+         input, select {
+            width: 100%;
+            height: 3.125rem; /* 50px */
+            max-height: 50px; /* 50px */
+            display: block;
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.125rem; /* 18px */
+            outline: none;
+            border: 1px solid #CECECE;
+            border-radius: 3px;
+            transition: all .3s ease;
+            &:focus { border-color: $secondary; }
+         }
+         &.input-full-w {
+            input {
+               width: 100%;
+            }
+         }
+         &.input-increase-height {
+            margin-bottom: 0;
+            padding-bottom: 2.5rem; /* 40px */
+            border-bottom: 1px solid #CECECE;
+            textarea {
+               width: 100%;
+               max-width: 100%;
+               height: 7.5rem; /* 120px */
+               max-height: 7.5rem; /* 120px */
+               padding: 1.25rem; /* 20px */
+               font-family: 'Outfit', sans-serif;
+               font-size: 1.125rem; /* 18px */
+               border: 1px solid #CECECE;
+               border-radius: 5px;
+               outline: none;
+               resize: none;
+               background: transparent;
+               transition: all .3s ease;
+               &:focus { border-color: $secondary; }
+            }
+            &.comments-height {
+               border: none;
+               padding: 0;
+               textarea {
+                  height: 18.75rem; /* 300px */
+                  max-height: 18.75rem; /* 300px */
+               }
+            }
+         }
+      }
+      .input-grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1.25rem; /* 20px */
+         padding-bottom: 2.5rem; /* 40px */
+         border-bottom: 1px solid #CECECE;
+         &.pt { padding-top: 2.5rem; /* 40px */ }
+         .input-field { margin-bottom: 0; }
+         &.no-border {
+            padding-top: 2.5rem; /* 40px */
+         }
+         &.one-grid {
+            grid-template-columns: 1fr;
+            padding-top: 2.5rem; /* 40px */
+         }
+         &.two-grid {
+            grid-template-columns: repeat(2, 1fr);
+         }
+         &.four-grid {
+            grid-template-columns: repeat(4, 1fr);
+         }
+      }
+      .input-number {
+         border-bottom: 1px solid #CECECE;
+         .btn-different {
+            width: 100%;
+            margin-top: 1.875rem; /* 30px */
+            padding: 1.125rem; /* 15px */
+            border: none;
+            border-radius: 3px;
+            color: #FFF;
+            background: $secondary;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover { opacity: .9; }
+         }
+         .input-grid {
+            padding-top: 1.875rem; /* 30px */
+            padding-bottom: 1.25rem; /* 30px */
+            border: none;
+         }
+      }
+      .btn-submit {
+         width: 100%;
+         display: block;
+         margin-top: 1.875rem; /* 30px */
+         padding: 1.25rem; /* 20px */
+         font-size: 1.25rem; /* 20px */
+         border: none;
+         border-radius: 5px;
+         color: #FFF;
+         background: $primary;
+         cursor: pointer;
+      }
+      .edit-base {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+         padding: 2.5rem 0; /* 40px */
+         border-radius: 10px;
+         box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+         color: #FFF;
+         background: $secondary;
+         p { font-size: 1.125rem; /* 20px */ }
+         h4 {
+            margin-bottom: 1.25rem; /* 20px */
+            font-size: 2.5rem; /* 40px */
+         }
+         .base-input {
+            width: 30%;
+            display: block;
+            margin: 1.875rem 0; /* 30px 0 */
+            padding: 0.625rem 0; /* 10px 0 */
+            text-align: center;
+            font-size: 2.5rem; /* 40px */
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #FFF;
+            color: #FFF;
+            background: transparent;
+            transition: all .3s ease;
+         }
+         .btn-edit {
+            width: 80%;
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            font-size: 1.125rem; /* 18px */
+            border: none;
+            border-radius: 3px;
+            text-align: center;
+            color: $secondary;
+            background: #FFF;
+            transition: all .3s ease;
+            cursor: pointer;
+         }
+      }
+      .car-values {
+         margin-top: 2.5rem; /* 40px */
+         padding: 1.875rem 0; /* 30px */
+         border-top: 1px solid #CECECE;
+         border-bottom: 1px solid #CECECE;
+         .values {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.625rem; /* 10px */
+            margin-bottom: 1.875rem; /* 30px */
+            .value-container {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               text-align: center;
+               p { font-size: 1.125rem; /* 18px */ }
+               h4 {
+                  font-size: 2.5rem; /* 40px */
+               }
+               .base-input {
+                  width: 50%;
+                  display: block;
+                  margin-top: 0.625rem; /* 10px */
+                  padding: 0.625rem 0; /* 10px 0 */
+                  font-size: 40px;
+                  text-align: center;
+                  outline: none;
+                  border: none;
+                  border-bottom: 1px solid $secondary;
+               }
+            }
+         }
+         .btn-edit {
+            width: 100%;
+            padding: 0.9375rem; /* 15px */
+            font-size: 1rem; /* 16px */
+            border: none;
+            border-radius: 3px;
+            color: #FFF;
+            background: $secondary;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover { opacity: .9; }
+         }
+      }
+   }
+}

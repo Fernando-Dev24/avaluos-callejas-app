@@ -1,0 +1,138 @@
+.expenses {
+   width: 100%;
+   padding: 2.5rem 0; /* 40px */
+   border-bottom: 1px solid #CECECE;
+   .expenses-header {
+      width: 100%;
+      margin-bottom: 1.875rem; /* 30px */
+      h3 {
+         font-size: 1.875rem; /* 30px */
+         color: $secondary;
+      }
+      p {
+         margin-bottom: 0.625rem; /* 10px */
+         font-size: 1.125rem; /* 18px */
+         color: rgba($color: $secondary, $alpha: .9);
+      }
+      .btn-add {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 1.25rem; /* 20px */
+         font-size: 1.25rem; /* 20px */
+         border-radius: 5px;
+         border: none;
+         color: #FFF;
+         background: $secondary;
+         transition: all .3s ease;
+         cursor: pointer;
+         &:hover { opacity: .9; }
+         .btn-icon { margin-right: 0.625rem; /* 10px */ pointer-events: none; }
+      }
+   }
+   .expenses-content {
+      width: 100%;
+      .expenses-table {
+         width: 100%;
+         border-collapse: separate;
+         border-spacing: 0 1rem;
+         text-align: center;
+         .table-row-header {
+            font-size: 1.125rem; /* 18px */
+            color: #FFF;
+            background: rgba($color: $secondary, $alpha: .9);
+            th {
+               width: min-content;
+               padding: 1.25rem 1.875rem; /* 20p 30px */
+               font-weight: 400;
+               &:first-child {
+                  width: 100%;
+                  border-radius: 5px 0 0 5px;
+               }
+               &:last-child { border-radius: 0 5px 5px 0; }
+            }
+         }
+         .table-row-body {
+            position: relative;
+            font-size: 1.125rem; /* 18px */
+            color: $secondary;
+            background: #F2F2F2;
+            z-index: 0;
+            td {
+               width: min-content;
+               padding: 1.25rem 1.875rem; /* 20px 30px */
+               font-weight: 400;
+               &:first-child {
+                  width: 100%;
+                  border-radius: 5px 0 0 5px;
+               }
+               &:nth-child(4) { border-radius: 0 5px 5px 0; }
+               &.empty-cell { border-radius: 5px; }
+               &.floated-button {
+                  position: absolute;
+                  left: -74px; /* -65px */
+                  height: 100%;
+                  display: grid;
+                  place-items: center;
+                  .btn-option {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     padding: 0.625rem; /* 10px */
+                     font-size: 1.4375rem; /* 23px */
+                     border: none;
+                     background: transparent;
+                     visibility: hidden;
+                     opacity: 1;
+                     cursor: pointer;
+                     .btn-icon {
+                        color: rgba($color: $secondary, $alpha: .7);
+                        pointer-events: none;
+                     }
+                     &:hover .btn-icon { color: #171717; }
+                  }
+               }
+               .btn-table {
+                  width: 100%;
+                  height: 2.5rem; /* 40px */
+                  max-height: 2.5rem; /* 40px */
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 1.25rem; /* 20px */
+                  border: none;
+                  background: transparent;
+                  cursor: pointer;
+                  .btn-icon {
+                     pointer-events: none;
+                     &.important { color: red; }
+                  }
+               }
+            }
+            &:hover {
+               td.floated-button {
+                  .btn-option {
+                     visibility: visible;
+                     opacity: 1;
+                  }
+               }
+            }
+         }
+      }
+      .total-expenses {
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 1.25rem 1.875rem; /* 20px 30px */
+         text-align: center;
+         font-size: 1.25rem; /* 20px */
+         font-weight: 600;
+         border-radius: 5px;
+         color: #FFF;
+         background: #3a3a3a;
+         & p:first-child { order: 1; }
+      }
+   }
+}

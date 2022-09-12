@@ -1,0 +1,204 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   &.avaluo-header {
+      position: fixed;
+      top: 0;
+      border-bottom: 1px solid #CECECE;
+      background: #FFF;
+      .header-content {
+         padding: 1.5625rem 0; /* 25px 0 */
+      }
+   }
+   .btn-back {
+      display: flex;
+      align-items: center;
+      padding: 0.625rem 1.25rem; /* 10px 20px */
+      border: none;
+      border-radius: 5px;
+      color: #FFF;
+      background: $secondary;
+      cursor: pointer;
+   }
+   &.no-border { border: none; }
+}
+
+.avaluo-container {
+   width: 100%;
+   margin-top: 100px;
+   padding: 3.125rem 0; /* 50px 0 */
+   .avaluo-wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      gap: 1.875rem;
+      .avaluo-nav {
+         width: 100%;
+         .avaluo-actions {
+            position: sticky;
+            top: 25%;
+            width: 100%;
+            .button-container {
+               margin-bottom: 1.875rem; /* 30px */
+               p {
+                  width: 100%;
+                  margin-bottom: 0.625rem; /* 10px */
+                  color: rgba($color: $secondary, $alpha: 1);
+               }
+               .btn-action {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.625rem 1.25rem; /* 10px 20px */
+                  font-size: 1.125rem; /* 18px */
+                  border: none;
+                  border-radius: 5px;
+                  color: #FFF;
+                  background: $secondary;
+                  transition: all .3s ease;
+                  cursor: pointer;
+                  .btn-icon {
+                     margin-right: 0.625rem; /* 10px */
+                     font-size: 1.125rem; /* 18px */
+                     pointer-events: none;
+                  }
+                  &.bg-primary {
+                     background: $primary;
+                  }
+                  &:hover { opacity: .9; }
+               }
+            }
+         }
+      }
+      .avaluo-info {
+         width: 100%;
+         .avaluo-info-section {
+            margin-bottom: 3.125rem; /* 50px */
+            h2 {
+               margin-bottom: 0.625rem; /* 10px */
+               font-size: 2.5rem; /* 40px */
+               color: $secondary;
+            }
+            & > p {
+               margin-bottom: 0.625rem; /* 5px */
+               font-size: 1.25rem; /* 20px */
+               color: rgba($color: $secondary, $alpha: .8);
+               &.avaluo-data {
+                  padding: 0.625rem 1.25rem; /* 10px 20px */
+                  border-radius: 3px;
+                  color: $secondary;
+                  background: $alternate;
+                  &.no-styles {
+                     padding: 0;
+                     line-height: 1.875rem; /* 30px */
+                     border-radius: 0;
+                     background: transparent;
+                  }
+               }
+            }
+            .btn-add-max-value {
+               width: 100%;
+               display: block;
+               margin-top: 25px;
+               margin-bottom: 1.5625rem; /* 25px */
+               padding: 0.625rem 1.25rem; /* 10px 20px */
+               border: 1px solid $secondary;
+               border-radius: 3px;
+               color: #FFF;
+               background: $secondary;
+               transition: all .3s ease;
+               cursor: pointer;
+               &:hover { opacity: .9; }
+            }
+            .avaluo-data {
+               margin-bottom: 1.25rem; /* 10px */
+               padding: 0.625rem 1.25rem; /* 10px 20px */
+               border-radius: 3px;
+               background: $alternate;
+               &.different { color: #FFF; background: $primary !important; }
+               &.flex {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  .total-expenses {
+                     width: 27%;
+                     display: flex;
+                     align-items: center;
+                  }
+                  & p:first-child { width: 80%; }
+               }
+               &.bg-primary {
+                  color: #FFF;
+                  background: $primary;
+                  p { font-size: 1.25rem; /* 20px */ }
+               }
+               &.comments {
+                  padding: 1.25rem;
+               }
+            }
+            .avaluo-info-grid {
+               display: grid;
+               grid-template-columns: repeat(3, auto);
+               gap: 0.625rem; /* 10px */
+               .avaluo-data {
+                  padding: 0.625rem 1.25rem; /* 10px 20px */
+                  font-size: 1.125rem; /* 18px */
+                  border-radius: 3px;
+                  background: $alternate;
+               }
+               &.full-width {
+                  margin-top: 0.625rem; /* 10px */
+                  grid-template-columns: 1fr;
+               }
+               &.two-columns {
+                  grid-template-columns: repeat(2, 1fr);
+                  .value-container {
+                     height: 100%;
+                     p {
+                        margin-bottom: 0.625rem; /* 10px */
+                        font-size: 1.125rem; /* 18px */
+                     }
+                     .data-style {
+                        padding: 1.25rem; /* 20px */
+                        font-weight: 600;
+                        font-size: 1.5625rem; /* 25px */
+                        border-radius: 5px;
+                        background: $alternate;
+                        &.text-price {
+                           font-size: 1.125rem; /* 18px */
+                        }
+                     }
+                     .default-input {
+                        width: 100%;
+                        padding: 0.625rem 1.25rem; /* 10px 20px */
+                        font-family: 'Outfit', sans-serif;
+                        font-size: 1rem; /* 16px */
+                        outline: none;
+                        border: 1px solid #CECECE;
+                        border-radius: 5px;
+                        transition: all .3s ease;
+                        &:focus { border-color: $secondary; }
+                     }
+                  }
+               }
+               &.mt {
+                  margin-top: 0.625rem; /* 10px */
+                  grid-template-columns: repeat(4, 1fr);
+               }
+            }
+            .target-data {
+               margin-bottom: 30px; /* 30px */
+               .avaluo-data {
+                  margin-bottom: 0.625rem; /* 10px */
+                  padding: 0.625rem 1.25rem; /* 10px 20px */
+                  font-size: 1.125rem; /* 18px */
+                  border-radius: 3px;
+                  background: $alternate;
+               }
+            }
+         }
+      }
+   }
+}

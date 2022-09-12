@@ -1,0 +1,46 @@
+.new-header {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   border-bottom: 1px solid #CECECE;
+   background: #FFF;
+   z-index: 100;
+   .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.875rem 0; /* 30px 0 */
+      .btn-cancel {
+         padding: 0.625rem 1.875rem; /* 10px 30px */
+         text-decoration: none;
+         border: none;
+         border-radius: 3px;
+         color: #FFF;
+         background: $primary;
+         cursor: pointer;
+      }
+      .create-links {
+         .btn-new {
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            margin: 0 0.625rem; /* 0 10px */
+            text-decoration: none;
+            border: 1px solid #CECECE;
+            border-radius: 3px;
+            color: #CECECE;
+            background: transparent;
+            transition: all .3s ease;
+            &:last-child { margin-right: 0; }
+            &.active {
+               color: #FFF;
+               border-color: $secondary;
+               background: $secondary;
+               &:hover { color: #FFF; }
+            }
+            &:hover {
+               color: $secondary;
+               border-color: $secondary;
+            }
+         }
+      }
+   }
+}

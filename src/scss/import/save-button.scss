@@ -1,0 +1,25 @@
+.btn-save {
+   position: fixed;
+   bottom: 40px;
+   right: 38px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 18px; /* 20px */
+   border: none;
+   border-radius: 50%;
+   filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.4));
+   color: #FFF;
+   background: #1F1D36;
+   transition: all .3s ease;
+   cursor: pointer;
+   .btn-icon {
+      font-size: 1.5625rem; /* 30px */
+      pointer-events: none;      
+   }
+   &:hover { background: #2e2b50; }
+   &.saved {
+      color: #FFF;
+      background: #4E944F;
+   }
+}
