@@ -1,6 +1,6 @@
 {
   "name": "avaluos-callejas-app",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "productName": "Callejas Avaluos",
   "main": "public/electron.js",
   "homepage": "./",

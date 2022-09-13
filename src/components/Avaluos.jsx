@@ -66,10 +66,11 @@ export const Avaluos = ({ foundAvaluos, setTargetAvaluo }) => {
                dayCounter++;
             };
 
-            if( avaluoMonth === currentMonth ) {
+            if( (avaluo.avaluoType !== 'SAN MIGUEL' && avaluoMonth === currentMonth) && (avaluo.avaluoType !== 'NIVEL DE COMPRESIONES' && avaluoMonth === currentMonth) ) {
                matrizCounter++;
-            };
+            }
          });
+
          setMonthCounter(monthCounter);
          setDayCounter(dayCounter);
          setMatrizCounter(matrizCounter);
@@ -97,7 +98,7 @@ export const Avaluos = ({ foundAvaluos, setTargetAvaluo }) => {
                </h3>
                { avaluos.length > 0 &&
                   <div className="avaluos-counter">
-                     <p>Casa Matriz en { formatMonth(getUnixTime(new Date())) }: <strong>{ matrizCounter } avalúos</strong></p>
+                     <p>Casa Matriz y Duraznos { formatMonth(getUnixTime(new Date())) }: <strong>{ matrizCounter } avalúos</strong></p>
 
                      <p>San Miguel en { formatMonth(getUnixTime(new Date())) }: <strong>{ monthCounter } avalúos</strong></p>
 

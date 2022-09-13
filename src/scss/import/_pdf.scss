@@ -447,7 +447,7 @@
                min-height: 510px !important;
                max-height: 510px !important;
                margin: 0;
-               /* .expenses-table {
+               .expenses-table {
                   .expenses-header {
                      td {
                         &.border-bottom { padding-bottom: 400px; }
@@ -459,7 +459,7 @@
                         td { padding-bottom: 400px; }
                      }
                   }
-               } */
+               }
             }
             .expenses-totals {
                position: static;
@@ -546,10 +546,9 @@
             }
             .expenses-comments {
                margin-bottom: 5px;
-               color: #FFF;
-               background: $primary;
+               color: $primary;
                p {
-                  color: #FFF;
+                  color: $primary;
                   margin: 0;
                   &:first-child {
                      margin-bottom: 3px;
