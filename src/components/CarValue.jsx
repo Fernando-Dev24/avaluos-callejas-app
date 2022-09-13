@@ -64,11 +64,11 @@ export const CarValue = ({
          commercialPrice = Math.round(base - expenses);
          agencyPrice = Math.round(( base - expenses ) / 1.23);
       } else if ( expensesPercentage >= 55 && expensesPercentage <= 75 ) { // When expenses are more than 55 and less than 75
-         commercialPrice = Math.round(base * 0.40);
-         agencyPrice = Math.round(( base * 0.40 ) / 1.23);
+         commercialPrice = Math.round(base * 0.50);
+         agencyPrice = Math.round(( base * 0.50 ) / 1.23);
       } else if ( expensesPercentage >= 76 && expensesPercentage <= 100 ) { // When expenses are more than 76 and less than 100
-         commercialPrice = Math.round(base * 0.30);
-         agencyPrice = Math.round(( base * 0.30 ) / 1.23);
+         commercialPrice = Math.round(base * 0.35);
+         agencyPrice = Math.round(( base * 0.35 ) / 1.23);
       } else if ( expensesPercentage > 100 ) {
          commercialPrice = Math.round(base * 0.25);
          agencyPrice = Math.round(( base * 0.25 ) / 1.23);
@@ -151,11 +151,11 @@ export const CarValue = ({
             agencyPrice = Math.round(( base - expenses ) / 1.23);
             console.log(commercialPrice, agencyPrice);
          } else if ( expensesPercentage >= 55 && expensesPercentage <= 75 ) { // When expenses are more than 55 and less than 75
-            commercialPrice = Math.round(base * 0.40);
-            agencyPrice = Math.round(( base * 0.40 ) / 1.23);
+            commercialPrice = Math.round(base * 0.50);
+            agencyPrice = Math.round(( base * 0.50 ) / 1.23);
          } else if ( expensesPercentage >= 76 && expensesPercentage <= 100 ) { // When expenses are more than 76 and less than 100
-            commercialPrice = Math.round(base * 0.30);
-            agencyPrice = Math.round(( base * 0.30 ) / 1.23);
+            commercialPrice = Math.round(base * 0.35);
+            agencyPrice = Math.round(( base * 0.35 ) / 1.23);
          } else if ( expensesPercentage > 100 ) {
             commercialPrice = Math.round(base * 0.25);
             agencyPrice = Math.round(( base * 0.25 ) / 1.23);
