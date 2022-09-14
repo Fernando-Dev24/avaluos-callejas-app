@@ -1,6 +1,6 @@
 {
   "name": "avaluos-callejas-app",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "productName": "Callejas Avaluos",
   "main": "public/electron.js",
   "homepage": "./",
@@ -39,7 +39,7 @@
   "scripts": {
     "start": "concurrently \"cross-env BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
     "build:prod": "react-scripts build && electron-builder --win",
-    "build:publish": "set GH_TOKEN=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 && react-scripts build && electron-builder --win --publish always"
+    "build:publish": "react-scripts build && electron-builder --win --publish always"
   },
   "build": {
     "productName": "Avalúos Callejas App",
