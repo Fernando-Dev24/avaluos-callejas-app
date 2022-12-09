@@ -14,7 +14,7 @@ import internetLogo from '../assets/internet-icon.svg';
 
 export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
    /* props */
-   const { avaluoType, cylindersCondition, expenses, numbersReason, plate, modified } = targetAvaluo.content;
+   const { avaluoType, cylindersCondition, expenses, numbersReason, plate, modified, fuel } = targetAvaluo.content;
    const { cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6, cylinder7, cylinder8 } = cylindersCondition;
    const { engineTarget, engineCar, chasisTarget, chasisCar, vinTarget, vinCar } = targetAvaluo.content;
 
@@ -84,7 +84,7 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                   <img src={ logo } alt="logo" />
                </figure>
                <section className="header__content">
-                  <p>Callejas & Asociados; Empresa acreditada por superintendencia del sistema financiero en categoria de <u>bienes muebles en general</u> con numero de inscripcion PV00122020 - { uniqueDocId }</p>
+                  <p>CALLEJAS & ASOCIADOS; EMPRESA ACREDITADA POR SUPERINTENDENCIA DEL SISTEMA FINANCIERO EN CATEGORIA DE <u>BIENES MUEBLES EN GENERAL</u> CON NUMERO DE INSCRIPCION PV00122020 - { uniqueDocId }</p>
                   <p className='important'>Exija documento original / validez 30 días / ver notas al reverso</p>
                </section>
             </header>
@@ -106,23 +106,38 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                            <td className='bigger-cell'><strong>PLACA / PÓLIZA</strong></td>
                            <td colSpan={3} className='data bigger-cell'><strong>{ targetAvaluo.content.plate }</strong></td>
                            <td><strong>PLACA FRONTAL</strong></td>
-                           <td className='data'>{ targetAvaluo.content.frontalSticker }</td>
+                           <td className={ targetAvaluo.content.frontalSticker !== 'TIENE'
+                              ? 'data warning'
+                              : 'data'
+                           }>
+                              { targetAvaluo.content.frontalSticker }
+                           </td>
                         </tr>
                         <tr className='car-table-row'>
                            <td><strong>FECHA</strong></td>
                            <td colSpan={3} className='data'>SAN SALVADOR, { formatWithoutTime(targetAvaluo.content.created) }</td>
                            <td><strong>PLACA TRASERA</strong></td>
-                           <td className='data'>{ targetAvaluo.content.rearSticker }</td>
+                           <td className={ targetAvaluo.content.rearSticker !== 'TIENE'
+                              ? 'data warning'
+                              : 'data'
+                           }>
+                              { targetAvaluo.content.rearSticker }
+                           </td>
                         </tr>
                         <tr className='car-table-row'>
                            <td><strong>SOLICITANTE</strong></td>
                            <td colSpan={3} className='data'>{ targetAvaluo.content.applicant }</td>
                            <td><strong>PLACA PARABRISAS</strong></td>
-                           <td className='data'>{ targetAvaluo.content.thirdSticker }</td>
+                           <td className={ targetAvaluo.content.thirdSticker !== 'TIENE'
+                              ? 'data warning'
+                              : 'data'
+                           }>
+                              { targetAvaluo.content.thirdSticker }
+                           </td>
                         </tr>
                         <tr className='car-table-row'>
                            <td><strong>PROPIETARIO</strong></td>
-                           <td colSpan={2} className='data'>{ targetAvaluo.content.costumer }</td>
+                           <td colSpan={3} className='data'>{ targetAvaluo.content.costumer }</td>
                         </tr>
                         <tr className='car-table-row'>
                            <td><strong>MARCA</strong></td>
@@ -136,12 +151,12 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                            <td><strong>MODELO</strong></td>
                            <td className='data'>{ targetAvaluo.content.model }</td>
                            <td><strong>ODÓMETRO</strong></td>
-                           <td className="data">{ targetAvaluo.content.odometer }</td>
+                           <td className='data'>{ targetAvaluo.content.odometer }</td>
                            <td><strong>TRACCIÓN</strong></td>
                            <td className='data'>{ targetAvaluo.content.traction }</td>
                         </tr>
                         <tr className="car-table-row">
-                           <td><strong>TIPO</strong></td>
+                           <td><strong>CLASE</strong></td>
                            <td className='data'>{ targetAvaluo.content.carType }</td>
                            <td><strong>COMBUSTIBLE</strong></td>
                            <td className='data'>{ targetAvaluo.content.fuel }</td>
@@ -151,31 +166,42 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                         <tr className='car-table-row'>
                            <td><strong>AÑO</strong></td>
                            <td className='data'>{ targetAvaluo.content.year }</td>
-                           <td><strong>CILINDROS</strong></td>
+                           <td><strong>N° CILINDROS</strong></td>
                            <td className='data'>{ targetAvaluo.content.cylinders }</td>
                            <td><strong>RODAJE</strong></td>
                            <td className='data'>{ targetAvaluo.content.runningIn }</td>
                         </tr>
                         <tr className='car-table-row'>
+                           <td><strong>ORIGEN</strong></td>
+                           <td className='data'>{ targetAvaluo.content.origin }</td>
                            <td><strong>COLOR</strong></td>
                            <td className='data'>{ targetAvaluo.content.color }</td>
                            <td><strong>CILINDRADA</strong></td>
                            <td className='data'>{ targetAvaluo.content.cylindersProm }</td>
                         </tr>
                         <tr className='car-table-row'>
-                           <td><strong>ORIGEN</strong></td>
-                           <td className='data'>{ targetAvaluo.content.origin }</td>
-                           <td><strong>TARJETA VENCE</strong></td>
+                           <td><strong>CAPACIDAD DE CARGA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.weightCapacity === '' ? '0' : targetAvaluo.content.weightCapacity }</td>
+                           <td><strong>TARA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.tara === '' ? '0' : targetAvaluo.content.tara }</td>
+                           <td><strong>CAP. MÁX. DE CARGA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.maxCapacity === '' ? '0' : targetAvaluo.content.maxCapacity }</td>
+                        </tr>
+                        <tr className='car-table-row'>
+                           <td><strong>FECHA VCTO. TARJETA</strong></td>
                            <td className={
                               targetAvaluo.content.targetOutDated < format(new Date(), 'yyyy-LL')
                               ? 'data date-expired'
                               : 'data'
-                           }>{ targetAvaluo.content.targetOutDated < format(new Date(), 'yyyy-LL')
-                              ? `${ targetAvaluo.content.targetOutDated }**`
-                              : targetAvaluo.content.targetOutDated
-                           }</td>
-                           <td><strong>EN CALIDAD DE</strong></td>
-                           <td className='data'>{ targetAvaluo.content.targetAs }</td>
+                           }> { targetAvaluo.content.targetAs.trim() === 'SIN TARJETA DE CIRCULACION'
+                                 ? 'SIN TARJETA DE CIRCULACION'
+                                 : targetAvaluo.content.targetOutDated < format(new Date(), 'yyyy-LL')
+                                   ? `${ targetAvaluo.content.targetOutDated } **`
+                                   : targetAvaluo.content.targetOutDated
+                              }
+                           </td>
+                           <td><strong>VEHÍCULO EN CALIDAD DE</strong></td>
+                           <td colSpan={2} className='data'>{ targetAvaluo.content.targetAs }</td>
                         </tr>
                      </tbody>
                   </table>
@@ -281,14 +307,38 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                   <section className="compressions">
                      <p><strong>LECTURA DE COMPRESIÓN A MOTOR POR MEDIO DE COMPRESÍMETRO</strong></p>
                      <section className="compressions-grid">
-                        <p><strong>CILINDRO 1:</strong> { cylinder1 }</p>
-                        <p><strong>CILINDRO 2:</strong> { cylinder2 }</p>
-                        <p><strong>CILINDRO 3:</strong> { cylinder3 }</p>
-                        <p><strong>CILINDRO 4:</strong> { cylinder4 }</p>
-                        <p><strong>CILINDRO 5:</strong> { cylinder5 }</p>
-                        <p><strong>CILINDRO 6:</strong> { cylinder6 }</p>
-                        <p><strong>CILINDRO 7:</strong> { cylinder7 }</p>
-                        <p><strong>CILINDRO 8:</strong> { cylinder8 }</p>
+                        <p>
+                           <strong>CILINDRO 1:</strong>
+                           <span className={ (cylinder1.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder1.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder1.trim() < '300' ? 'important' : undefined ) }>{ cylinder1.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 2:</strong>
+                           <span className={ (cylinder2.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder2.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder2.trim() < '300' ? 'important' : undefined ) }>{ cylinder2.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 3:</strong>
+                           <span className={ (cylinder3.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder3.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder3.trim() < '300' ? 'important' : undefined ) }>{ cylinder3.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 4:</strong>
+                           <span className={ (cylinder4.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder4.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder4.trim() < '300' ? 'important' : undefined ) }>{ cylinder4.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 5:</strong>
+                           <span className={ (cylinder5.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder5.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder5.trim() < '300' ? 'important' : undefined ) }>{ cylinder5.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 6:</strong>
+                           <span className={ (cylinder6.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder6.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder6.trim() < '300' ? 'important' : undefined ) }>{ cylinder6.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 7:</strong>
+                           <span className={ (cylinder7.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder7.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder7.trim() < '300' ? 'important' : undefined ) }>{ cylinder7.trim() }</span>
+                        </p>
+                        <p>
+                           <strong>CILINDRO 8:</strong>
+                           <span className={ (cylinder8.trim() === 'NO MEDIDA' ? 'important' : undefined) || ( fuel === 'GASOLINA' && cylinder8.trim() < '125' ? 'important' : undefined ) || ( fuel === 'DIESEL' && cylinder8.trim() < '300' ? 'important' : undefined ) }>{ cylinder8.trim() }</span>
+                        </p>
                      </section>
                      { targetAvaluo.content.cylindersReason === '' ?
                         <div className='compressions-reason-empty'>
@@ -299,7 +349,6 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                         </div>
                         :
                         <div className='compressions-reason'>
-                           <p>MOTIVO POR EL QUE NO SE MIDIERON COMPRESIONES A MOTOR</p>
                            <p>
                               { targetAvaluo.content.cylindersReason }
                            </p>
@@ -310,58 +359,71 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                   <section className='car-numbers'>
                      <article>
                         <p><strong>NÚMERO DE MOTOR EN VEHÍCULO</strong></p>
-                        <p className={ engineCar !== engineTarget
+                        <p className={
+                           (engineCar !== engineTarget) || (engineCar.includes('NO VISTO')) || (engineTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ engineCar }</p>
                      </article>
                      <article>
                         <p><strong>NÚMERO DE CHASIS EN VEHÍCULO</strong></p>
-                        <p className={ chasisCar !== chasisTarget
+                        <p className={
+                           (chasisCar !== chasisTarget) || (chasisCar.includes('NO VISTO')) || (chasisTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ chasisCar }</p>
                      </article>
                      <article>
                         <p><strong>NÚMERO DE VIN EN VEHÍCULO</strong></p>
-                        <p className={ vinCar !== vinTarget
+                        <p className={
+                           (vinCar !== vinTarget) || (vinCar.includes('NO VISTO')) || (vinTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ vinCar }</p>
                      </article>
                      <article>
                         <p><strong>NÚMERO DE MOTOR EN TARJETA</strong></p>
-                        <p className={ engineTarget !== engineCar
+                        <p className={
+                           (engineCar !== engineTarget) || (engineCar.includes('NO VISTO')) || (engineTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ engineTarget }</p>
                      </article>
                      <article>
                         <p><strong>NÚMERO DE CHASIS EN TARJETA</strong></p>
-                        <p className={ chasisTarget !== chasisCar
+                        <p className={
+                           (chasisCar !== chasisTarget) || (chasisCar.includes('NO VISTO')) || (chasisTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ chasisTarget }</p>
                      </article>
                      <article>
                         <p><strong>NÚMERO DE VIN EN TARJETA</strong></p>
-                        <p className={ vinTarget !== vinCar
+                        <p className={
+                           (vinCar !== vinTarget) || (vinCar.includes('NO VISTO')) || (vinTarget.includes('NO VISTO'))
                            ? 'different'
                            : undefined
                         }>{ vinTarget }</p>
                      </article>
                   </section>
 
-                  { alertDetails.state === true &&
+                  <section className="seals">
+                     <article className="seals-grid">
+                        <div className={ alertDetails.state === true ? 'seal alert' : 'seal' }>
+                           { alertDetails.content === undefined ? 'TODOS LOS NÚMEROS COINCIDEN' : alertDetails.content }
+                        </div>
+                     </article>
+                  </section>
+                  
+                  {/* { alertDetails.state === true &&
                      <section className="seals">
-                        <p>ALERTA - IMPORTANTE</p>
                         <article className="seals-grid">
                            <div className="seal">
-                              { alertDetails.content }
+                              { alertDetails.content === undefined ? 'TODOS LOS NÚMEROS COINCIDEN' : alertDetails.content }
                            </div>
                         </article>
                      </section>
-                  }
+                  } */}
                </section>
 
                <footer className="page-footer">

@@ -159,7 +159,7 @@ export const GeneratePdf = ({ exportValues, targetAvaluo, isResponsive }) => {
                            <td className='data'>{ targetAvaluo.content.traction }</td>
                         </tr>
                         <tr className="car-table-row">
-                           <td><strong>TIPO</strong></td>
+                           <td><strong>CLASE</strong></td>
                            <td className='data'>{ targetAvaluo.content.carType }</td>
                            <td><strong>COMBUSTIBLE</strong></td>
                            <td className='data'>{ targetAvaluo.content.fuel }</td>
@@ -169,21 +169,29 @@ export const GeneratePdf = ({ exportValues, targetAvaluo, isResponsive }) => {
                         <tr className='car-table-row'>
                            <td><strong>AÑO</strong></td>
                            <td className='data'>{ targetAvaluo.content.year }</td>
-                           <td><strong>CILINDROS</strong></td>
+                           <td><strong>N° CILINDROS</strong></td>
                            <td className='data'>{ targetAvaluo.content.cylinders }</td>
                            <td><strong>RODAJE</strong></td>
                            <td className='data'>{ targetAvaluo.content.runningIn }</td>
                         </tr>
                         <tr className='car-table-row'>
+                           <td><strong>ORIGEN</strong></td>
+                           <td className='data'>{ targetAvaluo.content.origin }</td>
                            <td><strong>COLOR</strong></td>
                            <td className='data'>{ targetAvaluo.content.color }</td>
                            <td><strong>CILINDRADA</strong></td>
                            <td className='data'>{ targetAvaluo.content.cylindersProm }</td>
                         </tr>
                         <tr className='car-table-row'>
-                           <td><strong>ORIGEN</strong></td>
-                           <td className='data'>{ targetAvaluo.content.origin }</td>
-                           <td><strong>TARJETA VENCE</strong></td>
+                           <td><strong>CAPACIDAD DE CARGA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.weightCapacity === '' ? '0' : targetAvaluo.content.weightCapacity }</td>
+                           <td><strong>TARA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.tara === '' ? '0' : targetAvaluo.content.tara }</td>
+                           <td><strong>CAP. MÁX. DE CARGA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.maxCapacity === '' ? '0' : targetAvaluo.content.maxCapacity }</td>
+                        </tr>
+                        <tr className='car-table-row'>
+                           <td><strong>FECHA VCTO. TARJETA</strong></td>
                            <td className={
                               targetAvaluo.content.targetOutDated < format(new Date(), 'yyyy-LL')
                               ? 'data date-expired'
@@ -195,8 +203,8 @@ export const GeneratePdf = ({ exportValues, targetAvaluo, isResponsive }) => {
                                    : targetAvaluo.content.targetOutDated
                               }
                            </td>
-                           <td><strong>EN CALIDAD DE</strong></td>
-                           <td className='data'>{ targetAvaluo.content.targetAs }</td>
+                           <td><strong>VEHÍCULO EN CALIDAD DE</strong></td>
+                           <td colSpan={2} className='data'>{ targetAvaluo.content.targetAs }</td>
                         </tr>
                      </tbody>
                   </table>
@@ -401,16 +409,14 @@ export const GeneratePdf = ({ exportValues, targetAvaluo, isResponsive }) => {
                         }>{ vinTarget }</p>
                      </article>
                   </section>
-                  
-                  { alertDetails.state === true &&
-                     <section className="seals">
-                        <article className="seals-grid">
-                           <div className="seal">
-                              { alertDetails.content }
-                           </div>
-                        </article>
-                     </section>
-                  }
+
+                  <section className="seals">
+                     <article className="seals-grid">
+                        <div className={ alertDetails.state === true ? 'seal alert' : 'seal' }>
+                           { alertDetails.content === undefined ? 'TODOS LOS NÚMEROS COINCIDEN' : alertDetails.content }
+                        </div>
+                     </article>
+                  </section>
                </section>
 
                <footer className="page-footer">

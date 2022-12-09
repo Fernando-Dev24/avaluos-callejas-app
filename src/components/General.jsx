@@ -25,7 +25,7 @@ export const General = ({
    const navigate = useNavigate();
 
    /* desestructuring to only use general form elements and its value */
-   const { pages, avaluoType, applicant, costumer, plate, frontalSticker, rearSticker, thirdSticker, brand, model, year, color, carType, origin, from, odometer, fuel, cylinders, cylindersProm, transmission, traction, runningIn, capacity, targetOutDated, targetAs, engineTarget, chasisTarget, vinTarget, engineCar, chasisCar, vinCar, numbersReason } = newAvaluo;
+   const { pages, avaluoType, applicant, costumer, plate, frontalSticker, rearSticker, thirdSticker, brand, model, year, color, carType, origin, from, odometer, fuel, cylinders, cylindersProm, transmission, traction, runningIn, capacity, weightCapacity, tara, maxCapacity, targetOutDated, targetAs, engineTarget, chasisTarget, vinTarget, engineCar, chasisCar, vinCar, numbersReason } = newAvaluo;
 
    /* states */
    const [decoder, setDecoder] = useState({
@@ -58,6 +58,20 @@ export const General = ({
                vinCar: target.value,
             });
          break;
+         case 'weightCapacity':
+            setNewAvaluo({
+               ...newAvaluo,
+               [target.name]: target.value,
+               maxCapacity: Number(target.value) + Number(tara),
+            });
+            break;
+         case 'tara':
+            setNewAvaluo({
+               ...newAvaluo,
+               [target.name]: target.value,
+               maxCapacity: Number(weightCapacity) + Number(target.value),
+            });
+            break;
          default:
             setNewAvaluo({
                ...newAvaluo,
@@ -445,8 +459,47 @@ export const General = ({
                         name="capacity"
                         id="capacity"
                         spellCheck="true"
-                        placeholder='5 asientos'
+                        placeholder='0'
                         value={ capacity }
+                        onChange={ handleFormValues }
+                     />
+                  </article>
+                  <article className="input-field">
+                     <label htmlFor="weightCapacity">Capacidad de Carga</label>
+                     <input
+                        lang='es'
+                        type="text"
+                        name="weightCapacity"
+                        id="weightCapacity"
+                        spellCheck="true"
+                        placeholder='0'
+                        value={ weightCapacity }
+                        onChange={ handleFormValues }
+                     />
+                  </article>
+                  <article className="input-field">
+                     <label htmlFor="tara">Tara</label>
+                     <input
+                        lang='es'
+                        type="text"
+                        name="tara"
+                        id="tara"
+                        spellCheck="true"
+                        placeholder='0'
+                        value={ tara }
+                        onChange={ handleFormValues }
+                     />
+                  </article>
+                  <article className="input-field">
+                     <label htmlFor="maxCapacity">Máxima Capacidad de Carga</label>
+                     <input
+                        lang='es'
+                        type="text"
+                        name="maxCapacity"
+                        id="maxCapacity"
+                        spellCheck="true"
+                        placeholder='0'
+                        value={ maxCapacity }
                         onChange={ handleFormValues }
                      />
                   </article>

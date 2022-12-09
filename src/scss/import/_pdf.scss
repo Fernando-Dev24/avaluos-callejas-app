@@ -134,7 +134,7 @@
             .car-table-row {
                border-spacing: 5px 0;
                td {
-                  font-size: 11px; /* 11px */
+                  font-size: 10.8px; /* 11px */
                   &.data {
                      padding-left: 5px;
                      &.warning {
@@ -174,7 +174,7 @@
             border-collapse: separate;
             border-spacing: 0 5px;
             .car-table-row {
-               td { font-size: 0.6875rem; /* 11px */ }
+               td { font-size: 11px; /* 11px */ }
             }
          }
          .tires-tools-grid {
@@ -256,12 +256,13 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  padding: 0 !important;
+                  padding: 6.5px !important;
                   text-align: center;
                   font-size: 12px !important; /* 12px */
                   font-weight: bold;
                   color: #FFF;
-                  background: $primary;
+                  background: $secondary;
+                  &.alert { background: $primary; }
                }
             }
          }

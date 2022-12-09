@@ -44,7 +44,7 @@ async function createWindow() {
    This method will be called when Electron is finished initialization and is ready to create browser windows.
    Some API's can only be used after this event occurs.
 */
-app.whenReady().then(createWindow);
+app.whenReady().then(createWindow());
 
 /* Quit when all windows are closed, except on macOS. There, its common for apps and their menu bar to stay active until user quits expliciy with CMD + Q */
 app.on('window-all-closed', () => {
