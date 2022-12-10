@@ -145,48 +145,48 @@ export const GeneratePdf = ({ exportValues, targetAvaluo, isResponsive }) => {
                         <tr className='car-table-row'>
                            <td><strong>MARCA</strong></td>
                            <td className='data'>{ targetAvaluo.content.brand }</td>
-                           <td><strong>PROCEDENCIA</strong></td>
-                           <td className='data'>{ targetAvaluo.content.from }</td>
-                           <td><strong>TRANSMISIÓN</strong></td>
-                           <td className='data'>{ targetAvaluo.content.transmission }</td>
-                        </tr>
-                        <tr className='car-table-row'>
-                           <td><strong>MODELO</strong></td>
-                           <td className='data'>{ targetAvaluo.content.model }</td>
                            <td><strong>ODÓMETRO</strong></td>
                            <td className='data'>{ targetAvaluo.content.odometer }</td>
                            <td><strong>TRACCIÓN</strong></td>
                            <td className='data'>{ targetAvaluo.content.traction }</td>
                         </tr>
-                        <tr className="car-table-row">
-                           <td><strong>CLASE</strong></td>
-                           <td className='data'>{ targetAvaluo.content.carType }</td>
+                        <tr className='car-table-row'>
+                           <td><strong>MODELO</strong></td>
+                           <td className='data'>{ targetAvaluo.content.model }</td>
                            <td><strong>COMBUSTIBLE</strong></td>
                            <td className='data'>{ targetAvaluo.content.fuel }</td>
                            <td><strong>CAPACIDAD</strong></td>
                            <td className='data'>{ targetAvaluo.content.capacity }</td>
                         </tr>
-                        <tr className='car-table-row'>
-                           <td><strong>AÑO</strong></td>
-                           <td className='data'>{ targetAvaluo.content.year }</td>
+                        <tr className="car-table-row">
+                           <td><strong>CLASE</strong></td>
+                           <td className='data'>{ targetAvaluo.content.carType }</td>
                            <td><strong>N° CILINDROS</strong></td>
                            <td className='data'>{ targetAvaluo.content.cylinders }</td>
                            <td><strong>RODAJE</strong></td>
                            <td className='data'>{ targetAvaluo.content.runningIn }</td>
                         </tr>
                         <tr className='car-table-row'>
+                           <td><strong>AÑO</strong></td>
+                           <td className='data'>{ targetAvaluo.content.year }</td>
+                           <td><strong>CILINDRADA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.cylindersProm }</td>
+                           <td><strong>CAPACIDAD DE CARGA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.weightCapacity === '' ? '0' : targetAvaluo.content.weightCapacity }</td>
+                        </tr>
+                        <tr className='car-table-row'>
                            <td><strong>ORIGEN</strong></td>
                            <td className='data'>{ targetAvaluo.content.origin }</td>
                            <td><strong>COLOR</strong></td>
                            <td className='data'>{ targetAvaluo.content.color }</td>
-                           <td><strong>CILINDRADA</strong></td>
-                           <td className='data'>{ targetAvaluo.content.cylindersProm }</td>
-                        </tr>
-                        <tr className='car-table-row'>
-                           <td><strong>CAPACIDAD DE CARGA</strong></td>
-                           <td className='data'>{ targetAvaluo.content.weightCapacity === '' ? '0' : targetAvaluo.content.weightCapacity }</td>
                            <td><strong>TARA</strong></td>
                            <td className='data'>{ targetAvaluo.content.tara === '' ? '0' : targetAvaluo.content.tara }</td>
+                        </tr>
+                        <tr className='car-table-row'>
+                           <td><strong>PROCEDENCIA</strong></td>
+                           <td className='data'>{ targetAvaluo.content.from }</td>
+                           <td><strong>TRANSMISIÓN</strong></td>
+                           <td className='data'>{ targetAvaluo.content.transmission }</td>
                            <td><strong>CAP. MÁX. DE CARGA</strong></td>
                            <td className='data'>{ targetAvaluo.content.maxCapacity === '' ? '0' : targetAvaluo.content.maxCapacity }</td>
                         </tr>
