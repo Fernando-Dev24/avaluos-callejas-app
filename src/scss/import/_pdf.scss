@@ -24,7 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 5px; /* 10px */
+      margin-bottom: 0; /* 10px */
       .logo {
          width: 30%;
          margin-right: 1.25rem; /* 20px */
@@ -98,7 +98,7 @@
    /* avaluo first page content */
    .vehicle-data {
       p {
-         font-size: 12px;
+         font-size: 11px;
          margin-bottom: 3px;
          &.crediq-recuperado {
             margin: 0;
@@ -256,9 +256,9 @@
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  padding: 6.5px !important;
+                  padding: 3px !important;
                   text-align: center;
-                  font-size: 12px !important; /* 12px */
+                  font-size: 11px !important; /* 12px */
                   font-weight: bold;
                   color: #FFF;
                   background: $secondary;
