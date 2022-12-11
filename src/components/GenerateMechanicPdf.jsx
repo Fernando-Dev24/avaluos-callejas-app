@@ -135,9 +135,9 @@ export const GenerateMechanicPdf = ({ targetAvaluo, isResponsive }) => {
                               { targetAvaluo.content.thirdSticker }
                            </td>
                         </tr>
-                        <tr className='car-table-row'>
+                        <tr className='car-table-row separate'>
                            <td><strong>PROPIETARIO</strong></td>
-                           <td colSpan={3} className='data'>{ targetAvaluo.content.costumer }</td>
+                           <td colSpan={5} className='data'>{ targetAvaluo.content.costumer }</td>
                         </tr>
                         <tr className='car-table-row'>
                            <td><strong>MARCA</strong></td>
